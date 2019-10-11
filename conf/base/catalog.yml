@@ -1,0 +1,110 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in the kedro docs under `Accessing data`
+# You can access the kedro docs by running `kedro docs`
+_pkl: &pkl
+  type: PickleLocalDataSet
+  backend: "joblib"
+  save_args:
+    compress: "gzip"
+
+_csv: &csv
+  type: CSVLocalDataSet
+
+
+X1_train:
+  <<: *csv
+  filepath: data/01_raw/train/X1.csv
+X2_train:
+  <<: *csv
+  filepath: data/01_raw/train/X2.csv
+X3_train:
+  <<: *csv
+  filepath: data/01_raw/train/X3.csv
+Y_train:
+  <<: *csv
+  filepath: data/01_raw/train/Y.csv
+
+X1_test:
+  <<: *csv
+  filepath: data/01_raw/test/X1.csv
+X2_test:
+  <<: *csv
+  filepath: data/01_raw/test/X2.csv
+X3_test:
+  <<: *csv
+  filepath: data/01_raw/test/X3.csv
+
+df_train:
+  <<: *pkl
+  filepath: data/02_intermediate/df_train.pkl
+df_test:
+  <<: *pkl
+  filepath: data/02_intermediate/df_test.pkl
+folds:
+  <<: *pkl
+  filepath: data/02_intermediate/folds.pkl
+
+hyper_best:
+  <<: *pkl
+  filepath: data/02_intermediate/hyper_best.pkl
+
+lightfm_embed:
+  <<: *pkl
+  filepath: data/02_intermediate/lightfm_embed.pkl
+
+kmean:
+  <<: *pkl
+  filepath: data/02_intermediate/kmean.pkl
+
+naive:
+  <<: *pkl
+  filepath: data/02_intermediate/naive.pkl
+lda:
+  <<: *pkl
+  filepath: data/02_intermediate/lda.pkl
+svd:
+  <<: *pkl
+  filepath: data/02_intermediate/svd.pkl
+umap:
+  <<: *pkl
+  filepath: data/02_intermediate/umap.pkl
+
+cv_models:
+  <<: *pkl
+  filepath: data/06_models/cv_models.pkl
+
+cv_oof:
+  <<: *pkl
+  filepath: data/07_model_output/cv_oof.pkl
+cv_test:
+  <<: *pkl
+  filepath: data/07_model_output/cv_test.pkl
+
+cv_result:
+  type: kedro.io.JSONLocalDataSet
+  filepath: data/08_reporting/cv_result.json
+  versioned: true
+
+shap_summary:
+  type: digital_reputation_challenge.io.matplotlib_io.MatplotlibWriter
+  filepath: data/08_reporting/shap_summary/
+  save_args:
+    bbox_inches: "tight"
+
+shap_reg:
+  type: digital_reputation_challenge.io.matplotlib_io.MatplotlibWriter
+  filepath: data/08_reporting/shap_reg/
+  save_args:
+    bbox_inches: "tight"
+
+
+shap_feature_stats:
+  <<: *pkl
+  filepath: data/08_reporting/shap_feature_stats.pkl
+
+submit:
+  <<: *csv
+  filepath: data/07_model_output/submit.csv
+  versioned: true
+

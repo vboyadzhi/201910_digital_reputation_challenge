@@ -1,0 +1,113 @@
+df_app:
+  folds: 10
+  oot: False
+  cv_byclient: False
+  col_id: id
+  col_target: ['Y_1','Y_2','Y_3','Y_4','Y_5']
+
+hyperopt:
+  max_evals: 30
+
+targetencoding:
+  n_folds: 20
+  n_repeats: 1
+  smoothing: 20
+  random_state: 0
+
+cols_cat: ['X1_1', 'X1_2', 'X1_3', 'X1_10', 'X1_11', 'X1_12', 'X1_13', 'X1_14', 'X1_15', 'X1_16', 'X1_17',
+       'X1_18', 'X1_19', 'X1_20', 'X1_21', 'X1_22', 'X1_23', 'X1_24', 'X1_25']
+#
+#cols_delete:
+#  Y_1: ['X_rand4','X_rand3','X_rand2', 'X_lightfm_23', 'X_lightfm_3',
+#       'X_lightfm_20', 'X_lightfm_22', 'X_lightfm_12', 'X_lightfm_6',
+#       'X_lightfm_24', 'X_lightfm_2', 'X_lightfm_18', 'X_rand1', 'X_lightfm_8',
+#       'X_rand0', 'X_lightfm_1', 'X1_22', 'X_lightfm_0', 'X_lightfm_31',
+#       'X_lightfm_25', 'X1_24', 'X1_13', 'X1_23', 'X1_12', 'X1_20', 'X1_18',
+#       'X1_19', 'X1_14', 'X1_2', 'X1_3', 'X1_10', 'X1_21', 'X1_11', 'X1_17',
+#       'X1_15', 'X1_25', 'X1_16']
+#  Y_2: ['X_rand1','X_rand2','X_rand4', 'X_lightfm_7', 'X_lightfm_2',
+#       'X_lightfm_29', 'X_rand3', 'X_lightfm_13', 'X_lightfm_4',
+#       'X_lightfm_21', 'X_lightfm_14', 'X_lightfm_6', 'X_lightfm_27', 'X1_4',
+#       'X_lightfm_24', 'X_lightfm_9', 'X_lightfm_15', 'X_rand0', 'X1_6',
+#       'X_lightfm_11', 'X1_1', 'X1_25', 'X1_7', 'X1_9', 'X1_24', 'X1_13',
+#       'X1_12', 'X1_10', 'X1_11', 'X1_3', 'X1_2', 'X1_14', 'X1_16', 'X1_17',
+#       'X1_18', 'X1_19', 'X1_20', 'X1_21', 'X1_22', 'X1_23', 'X1_15']
+#  Y_3: ['X_rand0', 'X_rand1', 'X_rand2',
+#       'X_rand3', 'X1_7', 'X_lightfm_10', 'X1_11', 'X1_22', 'X1_12', 'X1_13',
+#       'X1_14', 'X1_15', 'X1_16', 'X1_17', 'X1_18', 'X1_19', 'X1_20', 'X1_21',
+#       'X1_23', 'X_lightfm_9', 'X1_24', 'X1_25', 'X_lightfm_1', 'X_lightfm_2',
+#       'X_lightfm_3', 'X1_9', 'X_lightfm_5', 'X1_2', 'X_lightfm_7',
+#       'X_lightfm_8', 'X_rand4']
+#  Y_4: ['X_rand3','X_rand0','X_rand1', 'X_lightfm_13',
+#       'X_rand2', 'X_lightfm_22', 'X_lightfm_23', 'X_lightfm_11',
+#       'X_lightfm_7', 'X1_7', 'X_lightfm_2', 'X_rand4', 'X_lightfm_29',
+#       'X_lightfm_8', 'X_lightfm_1', 'X_lightfm_20', 'X_lightfm_25',
+#       'X_lightfm_18', 'X_lightfm_19', 'X_lightfm_3', 'X_lightfm_4',
+#       'X_lightfm_26', 'X1_4', 'X1_5', 'X_lightfm_27', 'X_lightfm_9',
+#       'X_lightfm_24', 'X1_11', 'X1_12', 'X1_14', 'X1_15', 'X1_3',
+#       'X_lightfm_0', 'X1_16', 'X1_10', 'X1_17', 'X1_18', 'X1_2', 'X1_25',
+#       'X_lightfm_17', 'X1_19', 'X1_20', 'X1_21', 'X1_22', 'X1_23', 'X1_24',
+#       'X1_9']
+#  Y_5: ['X_rand4','X_rand1','X_rand3', 'X_lightfm_3', 'X_lightfm_1',
+#       'X_rand0', 'X_lightfm_12', 'X_lightfm_11', 'X_rand2', 'X_lightfm_20',
+#       'X_lightfm_23', 'X1_5', 'X1_9', 'X1_22', 'X1_24', 'X1_23', 'X1_11',
+#       'X1_3', 'X1_10', 'X1_25', 'X1_12', 'X1_14', 'X1_2', 'X1_16', 'X1_17',
+#       'X1_18', 'X1_19', 'X1_20', 'X1_21', 'X1_15']
+
+#cols_delete:
+#  Y_1: ['X_rand4','X_rand3','X_rand2','X_rand1',
+#       'X1_22', 'X_lightfm_0', 'X_lightfm_31',
+#       'X_lightfm_25', 'X1_24', 'X1_13', 'X1_23', 'X1_12', 'X1_20', 'X1_18',
+#       'X1_19', 'X1_14', 'X1_2', 'X1_3', 'X1_10', 'X1_21', 'X1_11', 'X1_17',
+#       'X1_15', 'X1_25', 'X1_16']
+#  Y_2: ['X_rand1','X_rand2','X_rand4','X_rand3','X_rand0',
+#       'X_lightfm_11', 'X1_1', 'X1_25', 'X1_7', 'X1_9', 'X1_24', 'X1_13',
+#       'X1_12', 'X1_10', 'X1_11', 'X1_3', 'X1_2', 'X1_14', 'X1_16', 'X1_17',
+#       'X1_18', 'X1_19', 'X1_20', 'X1_21', 'X1_22', 'X1_23', 'X1_15']
+#  Y_3: ['X_rand0', 'X_rand1', 'X_rand2','X_rand3',
+#       'X1_14', 'X1_15', 'X1_16', 'X1_17', 'X1_18', 'X1_19', 'X1_20', 'X1_21',
+#       'X1_23', 'X_lightfm_9', 'X1_24', 'X1_25', 'X_lightfm_1', 'X_lightfm_2',
+#       'X_lightfm_3', 'X1_9', 'X_lightfm_5', 'X1_2', 'X_lightfm_7',
+#       'X_lightfm_8', 'X_rand4']
+#  Y_4: ['X_rand3','X_rand0','X_rand1', 'X_rand2', 'X_rand4',
+#       'X_lightfm_24', 'X1_11', 'X1_12', 'X1_14', 'X1_15', 'X1_3',
+#       'X_lightfm_0', 'X1_16', 'X1_10', 'X1_17', 'X1_18', 'X1_2', 'X1_25',
+#       'X_lightfm_17', 'X1_19', 'X1_20', 'X1_21', 'X1_22', 'X1_23', 'X1_24',
+#       'X1_9']
+#  Y_5: ['X_rand4','X_rand1','X_rand3','X_rand0',
+#       'X_lightfm_23', 'X1_5', 'X1_9', 'X1_22', 'X1_24', 'X1_23', 'X1_11',
+#       'X1_3', 'X1_10', 'X1_25', 'X1_12', 'X1_14', 'X1_2', 'X1_16', 'X1_17',
+#       'X1_18', 'X1_19', 'X1_20', 'X1_21', 'X1_15']
+
+cols_delete:
+  Y_1: []
+  Y_2: []
+  Y_3: []
+  Y_4: []
+  Y_5: []
+
+random_state: 20191005
+
+lightgbm:
+  params:
+    bagging_fraction: 0.849285747554019
+    bagging_freq: 5
+    bagging_seed: 0
+    boosting_type: 'gbdt'
+    data_random_seed: 0
+    drop_seed: 0
+    feature_fraction: 0.8212766928844304
+    feature_fraction_seed: 0
+    lambda_l1: 0.8955546599539566
+    lambda_l2: 1.4423261095989717
+    learning_rate: 0.03
+    max_bin: 255
+    max_depth: 43
+    metric: auc
+    min_data_in_leaf: 149
+    min_sum_hessian_in_leaf: 1.804477623298885
+    num_leaves: 363
+    objective: binary
+    seed: 0
+    verbose: -1
+  numboost: 228
